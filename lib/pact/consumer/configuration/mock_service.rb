@@ -98,6 +98,7 @@ module Pact
           {
             pact_specification_version: pact_specification_version,
             find_available_port: port.nil?,
+            standalone: standalone,
           }
         end
       end
