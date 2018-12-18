@@ -52,12 +52,10 @@ module Pact
         private
 
         def register_mock_service
-          unless standalone
             url = "http://localhost#{port.nil? ? '' : ":#{port}"}"
             ret = Pact::MockService::AppManager.instance.register_mock_service_for(provider_name, url, mock_service_options)
             raise "pact-mock_service(v#{Pact::MockService::VERSION}) does not support 'find available port' feature" unless ret
             @port = ret
-          end
         end
 
         def configure_consumer_contract_builder
